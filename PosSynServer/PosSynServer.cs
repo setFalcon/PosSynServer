@@ -29,6 +29,7 @@ namespace PosSynServer {
 
         //客户端与服务器创建连接
         protected override PeerBase CreatePeer(InitRequest initRequest) {
+            log.Info("有客户端连接");
             return new MyClientPeer(initRequest);
         }
 
