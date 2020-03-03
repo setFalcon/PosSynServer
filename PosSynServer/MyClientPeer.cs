@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Photon.SocketServer;
 using PhotonHostRuntimeInterfaces;
 
@@ -12,8 +13,19 @@ namespace PosSynServer {
             switch (opCode) {
                 case 1: 
                     PosSynServer.Log.Info("收到客户端请求");
+                    //接受Parameters
+                    Dictionary<byte,object> data = operationRequest.Parameters;
+                    object intValue;
+                    data.TryGetValue(1, out intValue);
+                    object stringValue;
+                    data.TryGetValue(2, out stringValue);
+                    PosSynServer.Log.Info(intValue + " " + stringValue);//打印信息
+                    //响应
                     OperationResponse resp = new OperationResponse();
                     resp.OperationCode = 1;
+                    Dictionary<byte, object> dataResp = new Dictionary<byte, object>();
+                    dataResp.Add(1,"Hello Client");
+                    resp.SetParameters(dataResp);
                     SendOperationResponse(resp,sendParameters);//响应客户端的请求
                     break;
                 default: break;
