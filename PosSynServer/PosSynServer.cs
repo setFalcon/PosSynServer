@@ -12,6 +12,7 @@ namespace PosSynServer {
     public class PosSynServer : ApplicationBase {
         //Logger对象，用于输出日志
         private static readonly ILogger log = LogManager.GetCurrentClassLogger();
+        public static ILogger Log => log;
 
         //初始化
         protected override void Setup() {
