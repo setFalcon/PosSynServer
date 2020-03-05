@@ -8,8 +8,7 @@ namespace SQLTest.domain {
         public string Username { get; set; }
         public string Password { get; set; }
 
-        public Users(long id, string username, string password) {
-            Id = id;
+        public Users( string username, string password) {
             Username = username;
             Password = password;
         }

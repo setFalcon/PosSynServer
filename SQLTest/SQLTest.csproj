@@ -45,16 +45,13 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="dao\impl\IUserDAOImpl.cs" />
         <Compile Include="dao\IUserDAO.cs" />
         <Compile Include="domain\Users.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="test\Tests.cs" />
         <Compile Include="util\MD5Util.cs" />
         <Compile Include="util\MySQLConnectUtil.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="config" />
-      <Folder Include="dao\impl" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

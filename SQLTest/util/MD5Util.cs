@@ -5,7 +5,7 @@ namespace SQLTest.util {
     public class MD5Util {
         private MD5Util() { }
 
-        private static string GetPasswordMD5(string password) {
+        public static string GetPasswordMD5(string password) {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
             StringBuilder sb = new StringBuilder();
