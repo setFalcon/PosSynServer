@@ -50,8 +50,13 @@
         <Compile Include="domain\Users.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="test\Tests.cs" />
-        <Compile Include="util\MD5Util.cs" />
         <Compile Include="util\MySQLConnectUtil.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\ConnectBridge\ConnectBridge.csproj">
+        <Project>{3528b9b7-339e-4942-9a08-0876651266fe}</Project>
+        <Name>ConnectBridge</Name>
+      </ProjectReference>
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -13,7 +13,7 @@ namespace SQLTest.dao.impl {
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 string sql =
-                    $"insert into t_users (username, password) values ('{users.Username}','{MD5Util.GetPasswordMD5(users.Password)}')";
+                    $"insert into t_users (username, password) values ('{users.Username}','{users.Password}')";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 int effectNum = cmd.ExecuteNonQuery();
                 if (effectNum != 1) {
@@ -39,7 +39,35 @@ namespace SQLTest.dao.impl {
         }
 
         public bool Verify(Users users) {
-            throw new System.NotImplementedException();
+            MySqlConnection conn = null;
+            MySqlDataReader reader = null;
+            try {
+                conn = MySQLConnectUtil.GetConnection("nettest");
+                conn.Open();
+                string sql = $"select * from t_users where username = '{users.Username}'";
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                reader = cmd.ExecuteReader();
+                if (reader.Read()) {
+                    string password = reader.GetString("password");
+                    if (MD5Util.VerifyPassword(users.Password, password)) {
+                        users.Id = long.Parse(reader.GetString("id"));
+                        return true;
+                    }
+                    else {
+                        return false;
+                    }
+                }
+                else {
+                    return false;
+                }
+            }
+            catch (Exception e) {
+                Console.WriteLine(e);
+                return false;
+            }
+            finally {
+                MySQLConnectUtil.CloseConnection(conn, reader);
+            }
         }
     }
 }

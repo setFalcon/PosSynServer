@@ -1,5 +1,4 @@
 using System;
-using System.IO;
 using MySql.Data.MySqlClient;
 
 namespace SQLTest.util {
@@ -12,14 +11,24 @@ namespace SQLTest.util {
             return new MySqlConnection(connectConfig);
         }
 
-        public static void CloseConnection(MySqlConnection conn) {
+        public static void CloseConnection(MySqlConnection conn, MySqlDataReader reader = null) {
             try {
-                if (conn != null) {
-                    conn.Close();
+                if (reader != null) {
+                    reader.Close();
                 }
             }
             catch (Exception e) {
                 Console.WriteLine(e);
+            }
+            finally {
+                try {
+                    if (conn != null) {
+                        conn.Close();
+                    }
+                }
+                catch (Exception e) {
+                    Console.WriteLine(e);
+                }
             }
         }
     }

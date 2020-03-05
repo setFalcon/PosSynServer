@@ -9,8 +9,7 @@ namespace SQLTest.util {
             MD5 md5 = new MD5CryptoServiceProvider();
             byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(password));
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < hash.Length; i++)
-            {
+            for (int i = 0; i < hash.Length; i++) {
                 sb.Append(hash[i].ToString("x2"));
             }
 
@@ -18,7 +17,7 @@ namespace SQLTest.util {
         }
 
         public static bool VerifyPassword(string inputPassword, string actualPassword) {
-            string inputPasswordMd5 = GetPasswordMD5(inputPassword);
+            string inputPasswordMd5 = inputPassword;
             return inputPasswordMd5.Equals(actualPassword);
         }
     }
