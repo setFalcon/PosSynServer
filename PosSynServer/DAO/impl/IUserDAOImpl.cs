@@ -1,10 +1,10 @@
 using System;
 using ConnectBridge.Util;
 using MySql.Data.MySqlClient;
-using SQLTest.domain;
-using SQLTest.util;
+using PosSynServer.Mapper;
+using PosSynServer.Util;
 
-namespace SQLTest.dao.impl {
+namespace PosSynServer.DAO.impl {
     public class IUserDAOImpl : IUserDAO {
         public bool Register(Users users) {
             MySqlConnection conn = null;

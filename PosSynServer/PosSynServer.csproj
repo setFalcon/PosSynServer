@@ -41,6 +41,9 @@
         <Reference Include="log4net, Version=1.2.13.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a">
           <HintPath>lib\log4net.dll</HintPath>
         </Reference>
+        <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d">
+          <HintPath>lib\MySql.Data.dll</HintPath>
+        </Reference>
         <Reference Include="Photon.SocketServer, Version=4.0.28.11245, Culture=neutral, PublicKeyToken=48c2fa3b6988090e">
           <HintPath>lib\Photon.SocketServer.dll</HintPath>
         </Reference>
@@ -53,12 +56,16 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="DAO\impl\IUserDAOImpl.cs" />
+        <Compile Include="DAO\IUserDAO.cs" />
         <Compile Include="Handler\BaseHandler.cs" />
         <Compile Include="Handler\DefaultHandler.cs" />
         <Compile Include="Handler\LoginHandler.cs" />
+        <Compile Include="Mapper\Users.cs" />
         <Compile Include="MyClientPeer.cs" />
         <Compile Include="PosSynServer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Util\MySQLConnectUtil.cs" />
     </ItemGroup>
     <ItemGroup>
       <Content Include="log4net.config">
@@ -70,9 +77,6 @@
         <Project>{3528b9b7-339e-4942-9a08-0876651266fe}</Project>
         <Name>ConnectBridge</Name>
       </ProjectReference>
-    </ItemGroup>
-    <ItemGroup>
-      <Folder Include="Util" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

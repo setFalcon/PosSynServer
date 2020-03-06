@@ -1,4 +1,4 @@
-namespace SQLTest.domain {
+namespace PosSynServer.Mapper {
     public class Users {
         private long id;
         private string username;

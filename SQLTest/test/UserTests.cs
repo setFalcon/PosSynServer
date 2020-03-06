@@ -1,14 +1,13 @@
 ﻿using System;
 using ConnectBridge.Util;
 using NUnit.Framework;
-using SQLTest.dao;
-using SQLTest.dao.impl;
-using SQLTest.domain;
-using SQLTest.util;
+using PosSynServer.DAO;
+using PosSynServer.DAO.impl;
+using PosSynServer.Mapper;
 
 namespace SQLTest {
     [TestFixture]
-    public class Tests {
+    public class UserTests {
         [Test]
         public void UsersDomainTest() {
             Users u = new Users("qqq", "aaa");

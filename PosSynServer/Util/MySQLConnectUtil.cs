@@ -1,7 +1,7 @@
 using System;
 using MySql.Data.MySqlClient;
 
-namespace SQLTest.util {
+namespace PosSynServer.Util {
     public class MySQLConnectUtil {
         private MySQLConnectUtil() { }
 
