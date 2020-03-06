@@ -18,7 +18,6 @@ namespace PosSynServer {
         public static ILogger Log => log;
         //将服务类改为单例模式
         public static PosSynServer Instance { get; private set; }
-        private PosSynServer() { }
         //所有的Handler集合
         public Dictionary<OperationCode, BaseHandler> handlerDict = new Dictionary<OperationCode, BaseHandler>();
         
@@ -40,8 +39,6 @@ namespace PosSynServer {
                 LogManager.SetLoggerFactory(Log4NetLoggerFactory.Instance); //Log工厂设置插件
                 XmlConfigurator.ConfigureAndWatch(configFileInfo); //读取xml配置文件
             }
-
-            log.Info("Setup Complete");
         }
 
         private void InitHandler() {
@@ -51,7 +48,6 @@ namespace PosSynServer {
 
         //客户端与服务器创建连接
         protected override PeerBase CreatePeer(InitRequest initRequest) {
-            log.Info("有客户端连接");
             return new MyClientPeer(initRequest);
         }
 
