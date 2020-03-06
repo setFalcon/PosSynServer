@@ -23,14 +23,14 @@ namespace SQLTest {
         [Test]
         public void RegisterUserTest() {
             IUserDAO userDao = new IUserDAOImpl();
-            bool result = userDao.Register(new Users("falcon", MD5Util.GetPasswordMD5("123456")));
+            bool result = userDao.Register(new Users("falcon", MD5Util.GetMD5("123456")));
             Assert.AreEqual(true, result);
         }
 
         [Test]
         public void VerifyUserTest() {
             IUserDAO userDao = new IUserDAOImpl();
-            bool result = userDao.Verify(new Users("falcon", MD5Util.GetPasswordMD5("123456")));
+            bool result = userDao.Verify(new Users("falcon", MD5Util.GetMD5("123456")));
             Assert.AreEqual(true, result);
         }
     }

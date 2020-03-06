@@ -13,7 +13,7 @@ namespace SQLTest.dao.impl {
                 conn.Open();
                 transaction = conn.BeginTransaction();
                 string sql =
-                    $"insert into t_users (username, password) values ('{users.Username}','{users.Password}')";
+                    $"insert into t_users (username, password) values ('{users.Username}','{MD5Util.GetSaltMD5(users.Password)}')";
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 int effectNum = cmd.ExecuteNonQuery();
                 if (effectNum != 1) {
