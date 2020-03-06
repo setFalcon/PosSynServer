@@ -53,6 +53,9 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Handler\BaseHandler.cs" />
+        <Compile Include="Handler\DefaultHandler.cs" />
+        <Compile Include="Handler\LoginHandler.cs" />
         <Compile Include="MyClientPeer.cs" />
         <Compile Include="PosSynServer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +70,9 @@
         <Project>{3528b9b7-339e-4942-9a08-0876651266fe}</Project>
         <Name>ConnectBridge</Name>
       </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Util" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
     <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

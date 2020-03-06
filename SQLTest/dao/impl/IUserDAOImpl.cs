@@ -1,4 +1,5 @@
 using System;
+using ConnectBridge.Util;
 using MySql.Data.MySqlClient;
 using SQLTest.domain;
 using SQLTest.util;

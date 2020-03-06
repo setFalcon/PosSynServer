@@ -1,4 +1,5 @@
 ﻿using System;
+using ConnectBridge.Util;
 using NUnit.Framework;
 using SQLTest.dao;
 using SQLTest.dao.impl;

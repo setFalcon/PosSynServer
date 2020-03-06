@@ -1,7 +1,7 @@
 using System.Security.Cryptography;
 using System.Text;
 
-namespace SQLTest.util {
+namespace ConnectBridge.Util {
     public class MD5Util {
         private MD5Util() { }
 
