@@ -42,6 +42,7 @@
         <Compile Include="OperationCode.cs" />
         <Compile Include="ParameterCode.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="ReturnCode.cs" />
         <Compile Include="Util\DictUtil.cs" />
         <Compile Include="Util\MD5Util.cs" />
     </ItemGroup>
