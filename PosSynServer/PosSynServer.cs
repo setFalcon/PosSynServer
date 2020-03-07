@@ -20,6 +20,8 @@ namespace PosSynServer {
         public static PosSynServer Instance { get; private set; }
         //所有的Handler集合
         public Dictionary<OperationCode, BaseHandler> handlerDict = new Dictionary<OperationCode, BaseHandler>();
+        //所有ClientPeer
+        public List<MyClientPeer> peerList = new List<MyClientPeer>();
         
         //初始化
         protected override void Setup() {
@@ -50,7 +52,9 @@ namespace PosSynServer {
 
         //客户端与服务器创建连接
         protected override PeerBase CreatePeer(InitRequest initRequest) {
-            return new MyClientPeer(initRequest);
+            MyClientPeer peer = new MyClientPeer(initRequest);
+            peerList.Add(peer);
+            return peer;
         }
 
         //服务关闭
