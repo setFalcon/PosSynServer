@@ -5,5 +5,6 @@ namespace ConnectBridge {
         PositionX,
         PositionY,
         PositionZ,
+        UsernameList,
     }
 }

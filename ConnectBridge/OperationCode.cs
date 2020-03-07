@@ -4,5 +4,6 @@ namespace ConnectBridge {
         Login,
         Register,
         SyncPos,
+        SyncPlayer,
     }
 }
