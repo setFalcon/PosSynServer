@@ -3,5 +3,6 @@ namespace ConnectBridge {
         Default,
         Login,
         Register,
+        SyncPos,
     }
 }
