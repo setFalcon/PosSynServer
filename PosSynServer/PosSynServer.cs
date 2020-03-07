@@ -45,6 +45,7 @@ namespace PosSynServer {
             handlerDict.Add(OperationCode.Default,new DefaultHandler());
             handlerDict.Add(OperationCode.Login,new LoginHandler());
             handlerDict.Add(OperationCode.Register,new RegisterHandler());
+            handlerDict.Add(OperationCode.SyncPos,new SyncPosHandler());
         }
 
         //客户端与服务器创建连接

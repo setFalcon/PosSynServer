@@ -62,6 +62,7 @@
         <Compile Include="Handler\DefaultHandler.cs" />
         <Compile Include="Handler\LoginHandler.cs" />
         <Compile Include="Handler\RegisterHandler.cs" />
+        <Compile Include="Handler\SyncPosHandler.cs" />
         <Compile Include="Mapper\Users.cs" />
         <Compile Include="MyClientPeer.cs" />
         <Compile Include="PosSynServer.cs" />
