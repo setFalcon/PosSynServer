@@ -6,5 +6,6 @@ namespace ConnectBridge {
         PositionY,
         PositionZ,
         UsernameList,
+        PlayerDataList,
     }
 }

@@ -7,7 +7,7 @@ using PosSynServer.Handler;
 namespace PosSynServer {
     //客户端连接后，使用ClientPeer代表客户端的一个链接
     public class MyClientPeer : ClientPeer {
-        public float x, y, z;
+        public double x, y, z;
         public string username;
         
         public MyClientPeer(InitRequest initRequest) : base(initRequest) { }
