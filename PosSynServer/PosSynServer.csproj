@@ -71,6 +71,7 @@
         <Compile Include="MyClientPeer.cs" />
         <Compile Include="PosSynServer.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="Threads\SyncPosThread.cs" />
         <Compile Include="Util\MySQLConnectUtil.cs" />
     </ItemGroup>
     <ItemGroup>

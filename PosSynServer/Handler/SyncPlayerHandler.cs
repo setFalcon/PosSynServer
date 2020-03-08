@@ -32,7 +32,7 @@ namespace PosSynServer.Handler {
                     Dictionary<byte, object> eData = new Dictionary<byte, object>();
                     eData.Add((byte) ParameterCode.Username,(clientPeer as MyClientPeer)?.username);
                     eventData.SetParameters(eData);
-                    clientPeer.SendEvent(eventData, sendParameters);
+                    peer.SendEvent(eventData, sendParameters);
                 }
             }
         }
